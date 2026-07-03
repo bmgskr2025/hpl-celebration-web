@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인증서 다운로드 — 허벌라이프 프리미어 리그</title>
+<link rel="icon" href="assets/hpl-badge.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/hpl-badge.png" alt="HPL 배지">
+      <span>허벌라이프 프리미어 리그</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">축하의 벽</a>
+      <a href="certificate.html" class="active">인증서 다운로드</a>
+      <a href="flyer.html">레커니션 플라이어</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container tool-layout">
+  <aside class="tool-panel">
+    <h2>인증서 만들기</h2>
+    <p class="panel-desc">이름을 입력하면 2026 허벌라이프 프리미어 리그 공식 인증서에 이름이 새겨집니다.</p>
+
+    <div class="field">
+      <label for="certName">이름</label>
+      <input type="text" id="certName" placeholder="예: 홍길동" maxlength="40" autocomplete="off">
+    </div>
+
+    <button class="btn" id="dlPng" disabled>이미지(PNG)로 다운로드</button>
+    <button class="btn secondary" id="dlPdf" disabled>PDF로 다운로드</button>
+
+    <p class="privacy-hint">🔒 입력한 이름은 이 브라우저 안에서만 인증서 이미지를 만드는 데 사용되며, 어디에도 저장·전송되지 않습니다.</p>
+  </aside>
+
+  <section class="canvas-wrap">
+    <canvas id="certCanvas" width="2200" height="1700"></canvas>
+    <p class="canvas-hint">미리보기 — 다운로드하면 고해상도(인쇄 가능) 파일로 저장됩니다.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <img class="footer-logo" src="assets/logo-white-kr.png" alt="Herbalife 최고의 삶을 사세요">
+    <p class="privacy">🔒 이 사이트에는 로그인·저장 기능이 없습니다. 입력하는 이름은 사용자 기기의 브라우저 안에서만 처리되고, 페이지를 닫으면 사라집니다.</p>
+  </div>
+</footer>
+
+<script src="vendor/jspdf.umd.min.js"></script>
+<script src="js/certificate.js"></script>
+</body>
+</html>

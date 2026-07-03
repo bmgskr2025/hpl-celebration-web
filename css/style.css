@@ -1,0 +1,373 @@
+/* ==========================================================================
+   Herbalife Premier League Celebration — 브랜드 팔레트 (Herbalife Brand Book)
+   ========================================================================== */
+:root {
+  /* Primary */
+  --garden-green: #007044;
+  --forest-green: #163E35;
+  --energy-green: #309C46;
+  --beige: #F9F8F4;
+  --white: #FFFFFF;
+  /* Secondary (10% 이하 사용) */
+  --laguna-light: #B1E4F1;
+  --laguna: #2D68CB;
+  /* Tertiary */
+  --night-sky: #101921;
+  --grey: #837976;
+  /* Celebration Metallic — 레커니션 전용 */
+  --celebration: #258C4B;
+  --gold: #C99403;
+
+  --font: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --radius: 16px;
+  --shadow: 0 4px 20px rgba(16, 25, 33, 0.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--night-sky);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+img { max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- 상단 네비게이션 ---------- */
+.nav {
+  background: var(--night-sky);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.nav-logo img { height: 34px; width: auto; }
+.nav-logo span { color: var(--laguna-light); font-size: 15px; }
+.nav-links { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+.nav-links a:hover { background: rgba(177, 228, 241, 0.15); }
+.nav-links a.active { background: var(--garden-green); font-weight: 700; }
+
+/* ---------- 히어로 ---------- */
+.hero {
+  background: var(--night-sky);
+  color: var(--white);
+  text-align: center;
+  padding: 56px 20px 64px;
+}
+.hero img.badge { width: 170px; height: auto; margin-bottom: 24px; }
+.hero h1 {
+  font-size: clamp(26px, 5vw, 44px);
+  font-weight: 900;
+  line-height: 1.35;
+}
+.hero h1 .accent { color: var(--laguna-light); }
+.hero p.sub {
+  margin-top: 14px;
+  font-size: clamp(14px, 2.5vw, 17px);
+  color: var(--laguna-light);
+  font-weight: 400;
+}
+
+/* ---------- 공통 섹션 ---------- */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 48px 0; }
+.section-title {
+  color: var(--garden-green);
+  font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.section-desc { color: var(--grey); font-size: 15px; margin-bottom: 28px; }
+
+/* ---------- 월 선택 탭 ---------- */
+.month-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -26px auto 0;
+  position: relative;
+  z-index: 5;
+  max-width: 1080px;
+  padding: 0 20px;
+}
+.month-tab {
+  background: var(--white);
+  border: 2px solid var(--garden-green);
+  color: var(--garden-green);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.month-tab.active { background: var(--garden-green); color: var(--white); }
+
+/* ---------- 티어 그룹 ---------- */
+.tier-block { margin-bottom: 44px; }
+.tier-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.tier-head h3 { font-size: clamp(18px, 3vw, 24px); font-weight: 900; }
+.tier-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: var(--white);
+}
+.tier-triple h3 { color: var(--gold); }
+.tier-triple .tier-badge { background: var(--gold); }
+.tier-double h3 { color: var(--celebration); }
+.tier-double .tier-badge { background: var(--celebration); }
+.tier-first h3 { color: var(--garden-green); }
+.tier-first .tier-badge { background: var(--garden-green); }
+.tier-msg { color: var(--night-sky); font-size: 15px; margin-bottom: 4px; }
+.tier-note { color: var(--grey); font-size: 12.5px; margin-bottom: 18px; }
+
+/* ---------- 자격취득자 카드 ---------- */
+.q-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+.q-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--beige);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  border-left: 5px solid var(--garden-green);
+}
+.q-card .leaf {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--night-sky);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.q-card .leaf img { width: 24px; height: auto; }
+.q-card .q-name { font-weight: 700; font-size: 16.5px; line-height: 1.4; }
+.q-card .q-team { font-size: 13.5px; color: var(--garden-green); font-weight: 500; }
+.q-card.team-president { border-left-color: var(--gold); }
+.q-card.team-president .q-team { color: var(--gold); }
+.q-card.team-millionaire { border-left-color: var(--celebration); }
+.q-card.team-get { border-left-color: var(--energy-green); }
+.q-card.team-world { border-left-color: var(--laguna); }
+.empty-month {
+  text-align: center;
+  color: var(--grey);
+  padding: 60px 20px;
+  font-size: 15px;
+}
+
+/* ---------- 기능 카드 ---------- */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.feature-card {
+  background: var(--forest-green);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  display: block;
+  transition: transform 0.15s ease;
+}
+.feature-card:hover { transform: translateY(-4px); }
+.feature-card .fc-icon { font-size: 34px; margin-bottom: 12px; }
+.feature-card h3 { font-size: 19px; font-weight: 900; margin-bottom: 8px; color: var(--laguna-light); }
+.feature-card p { font-size: 14px; line-height: 1.6; opacity: 0.92; }
+.feature-card .fc-go { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 14px; color: var(--energy-green); }
+
+/* ---------- 푸터 ---------- */
+.footer {
+  background: var(--night-sky);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 36px 0 44px;
+  margin-top: 40px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.footer .container { display: grid; gap: 16px; }
+.footer .privacy {
+  color: var(--laguna-light);
+  font-size: 13px;
+  font-weight: 500;
+}
+.footer img.footer-logo { height: 30px; width: auto; opacity: 0.95; }
+
+/* ---------- 도구 페이지 공통 (인증서/플라이어) ---------- */
+.tool-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 36px 0 56px;
+}
+@media (max-width: 900px) {
+  .tool-layout { grid-template-columns: 1fr; }
+}
+.tool-panel {
+  background: var(--beige);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: sticky;
+  top: 76px;
+}
+@media (max-width: 900px) {
+  .tool-panel { position: static; }
+}
+.tool-panel h2 { color: var(--garden-green); font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.tool-panel .panel-desc { font-size: 13px; color: var(--grey); margin-bottom: 18px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.field input[type="text"], .field textarea {
+  width: 100%;
+  border: 1.5px solid #d8d5cc;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: var(--font);
+  font-size: 15px;
+  background: var(--white);
+  color: var(--night-sky);
+}
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--garden-green);
+}
+.field textarea { resize: vertical; min-height: 64px; font-size: 13.5px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 22px;
+  cursor: pointer;
+  background: var(--garden-green);
+  color: var(--white);
+  width: 100%;
+  margin-top: 6px;
+}
+.btn:hover { background: #005936; }
+.btn.secondary { background: var(--night-sky); }
+.btn.secondary:hover { background: #202f3d; }
+.btn.ghost {
+  background: transparent;
+  border: 2px solid var(--garden-green);
+  color: var(--garden-green);
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.privacy-hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--grey);
+  line-height: 1.6;
+  border-top: 1px solid #e2dfd7;
+  padding-top: 12px;
+}
+.canvas-wrap {
+  background: var(--beige);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-align: center;
+}
+.canvas-wrap canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+.canvas-hint { font-size: 12.5px; color: var(--grey); margin-top: 10px; }
+
+/* ---------- 플라이어 템플릿 선택 ---------- */
+.tpl-select { display: flex; gap: 10px; margin-bottom: 18px; }
+.tpl-btn {
+  flex: 1;
+  border: 2px solid #d8d5cc;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--grey);
+}
+.tpl-btn canvas { width: 100%; height: auto; border-radius: 6px; display: block; margin-bottom: 6px; }
+.tpl-btn.active { border-color: var(--garden-green); color: var(--garden-green); }
+
+.name-group { margin-bottom: 14px; }
+.name-group summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--forest-green);
+  padding: 6px 0;
+}
+.name-group .field { margin-bottom: 8px; }
+.name-group input { font-size: 14px !important; padding: 8px 10px !important; }
+
+.slot-tools {
+  background: var(--white);
+  border: 1.5px solid var(--garden-green);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+.slot-tools h4 { font-size: 14px; color: var(--garden-green); margin-bottom: 8px; }
+.slot-tools .zoom-row { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.slot-tools input[type="range"] { flex: 1; accent-color: var(--garden-green); }
+.slot-tools .mini-btns { display: flex; gap: 8px; margin-top: 10px; }
+.slot-tools .mini-btns button {
+  flex: 1;
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 7px 0;
+  border-radius: 8px;
+  border: 1.5px solid var(--grey);
+  background: var(--white);
+  color: var(--night-sky);
+  cursor: pointer;
+}

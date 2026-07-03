@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>레커니션 플라이어 — 허벌라이프 프리미어 리그</title>
+<link rel="icon" href="assets/hpl-badge.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/hpl-badge.png" alt="HPL 배지">
+      <span>허벌라이프 프리미어 리그</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">축하의 벽</a>
+      <a href="certificate.html">인증서 다운로드</a>
+      <a href="flyer.html" class="active">레커니션 플라이어</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container tool-layout">
+  <aside class="tool-panel">
+    <h2>레커니션 플라이어</h2>
+    <p class="panel-desc">자격 달성에 기여한 다운라인(뉴 수퍼바이저 2명 + 뉴 디스트리뷰터 10명)의 사진과 이름을 넣어 감사 플라이어를 만드세요. 미리보기에서 <strong>사진 자리를 클릭</strong>하면 사진을 넣을 수 있습니다.</p>
+
+    <div class="field">
+      <label>템플릿 선택</label>
+      <div class="tpl-select" id="tplSelect"></div>
+    </div>
+
+    <div class="slot-tools" id="slotTools" style="display:none">
+      <h4 id="slotToolsTitle">선택한 사진</h4>
+      <div class="zoom-row">
+        <span>확대</span>
+        <input type="range" id="zoomRange" min="100" max="300" value="100">
+      </div>
+      <div class="mini-btns">
+        <button type="button" id="btnReplace">사진 교체</button>
+        <button type="button" id="btnRemove">사진 제거</button>
+      </div>
+      <p class="canvas-hint" style="margin-top:8px">미리보기에서 사진을 드래그하면 위치를 조절할 수 있어요.</p>
+    </div>
+
+    <div class="field">
+      <label for="headlineInput">헤드라인</label>
+      <input type="text" id="headlineInput" value="감사합니다!" maxlength="24">
+    </div>
+    <div class="field">
+      <label for="messageInput">감사 메시지</label>
+      <textarea id="messageInput" maxlength="140">여러분 모두를 자랑스럽게 소개합니다. 여러분의 노력과 헌신 덕분에 허벌라이프 프리미어 리그 자격 달성이 가능했습니다.</textarea>
+    </div>
+
+    <details class="name-group" open>
+      <summary>뉴 수퍼바이저 이름 (2명)</summary>
+      <div class="field"><input type="text" data-name="sp1" placeholder="뉴 수퍼바이저 1 이름"></div>
+      <div class="field"><input type="text" data-name="sp2" placeholder="뉴 수퍼바이저 2 이름"></div>
+    </details>
+
+    <details class="name-group">
+      <summary>뉴 디스트리뷰터 이름 (10명)</summary>
+      <div class="field"><input type="text" data-name="d1" placeholder="뉴 디스트리뷰터 1"></div>
+      <div class="field"><input type="text" data-name="d2" placeholder="뉴 디스트리뷰터 2"></div>
+      <div class="field"><input type="text" data-name="d3" placeholder="뉴 디스트리뷰터 3"></div>
+      <div class="field"><input type="text" data-name="d4" placeholder="뉴 디스트리뷰터 4"></div>
+      <div class="field"><input type="text" data-name="d5" placeholder="뉴 디스트리뷰터 5"></div>
+      <div class="field"><input type="text" data-name="d6" placeholder="뉴 디스트리뷰터 6"></div>
+      <div class="field"><input type="text" data-name="d7" placeholder="뉴 디스트리뷰터 7"></div>
+      <div class="field"><input type="text" data-name="d8" placeholder="뉴 디스트리뷰터 8"></div>
+      <div class="field"><input type="text" data-name="d9" placeholder="뉴 디스트리뷰터 9"></div>
+      <div class="field"><input type="text" data-name="d10" placeholder="뉴 디스트리뷰터 10"></div>
+    </details>
+
+    <button class="btn" id="btnExport">고화질 이미지로 다운로드</button>
+
+    <p class="privacy-hint">🔒 업로드한 사진과 이름은 이 브라우저 안에서만 플라이어 이미지를 만드는 데 사용되며, 어디에도 저장·전송되지 않습니다.</p>
+  </aside>
+
+  <section class="canvas-wrap">
+    <canvas id="flyerCanvas" width="1080" height="1080"></canvas>
+    <p class="canvas-hint">사진 자리를 클릭해 사진을 넣고, 드래그로 위치를 조절하세요. 다운로드하면 2160×2160 고해상도로 저장됩니다.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <img class="footer-logo" src="assets/logo-white-kr.png" alt="Herbalife 최고의 삶을 사세요">
+    <p class="privacy">🔒 이 사이트에는 로그인·저장 기능이 없습니다. 업로드하는 사진은 사용자 기기의 브라우저 안에서만 처리되고, 페이지를 닫으면 사라집니다.</p>
+  </div>
+</footer>
+
+<input type="file" id="photoInput" accept="image/*" style="display:none">
+<script src="js/flyer.js"></script>
+</body>
+</html>

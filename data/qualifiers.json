@@ -1,0 +1,27 @@
+{
+  "months": [
+    {
+      "id": "2026-06",
+      "label": "2026년 6월",
+      "qualifiers": [
+        { "name": "홍길동 & 김철수", "team": "프레지던트팀", "tier": "triple" },
+        { "name": "이영희", "team": "밀리어네어팀", "tier": "double" },
+        { "name": "박민수 & 최지은", "team": "글로벌 익스팬션팀", "tier": "double" },
+        { "name": "홍길동", "team": "월드팀", "tier": "first" },
+        { "name": "김민지", "team": "월드팀", "tier": "first" },
+        { "name": "정우성 & 한지민", "team": "에스피", "tier": "first" },
+        { "name": "오세훈", "team": "에스피", "tier": "first" },
+        { "name": "장서연", "team": "에스피", "tier": "first" }
+      ]
+    },
+    {
+      "id": "2026-05",
+      "label": "2026년 5월",
+      "qualifiers": [
+        { "name": "김하늘", "team": "밀리어네어팀", "tier": "triple" },
+        { "name": "이준호 & 박소영", "team": "월드팀", "tier": "first" },
+        { "name": "최다혜", "team": "에스피", "tier": "first" }
+      ]
+    }
+  ]
+}
