@@ -9,11 +9,14 @@
      - fields: 각 질문의 entry ID
      ------------------------------------------------------------------ */
   var FORM = {
-    action: '',
+    action: 'https://docs.google.com/forms/d/e/1FAIpQLSckD2vCw5pRJ6jgpUkUscznXFpIIJHg5aT014Yi2nEr7a5QnQ/formResponse',
     fields: {
-      rating: '',   // 평가 (좋아요/아쉬워요)
-      page: '',     // 페이지 이름 (자동)
-      comment: ''   // 의견
+      /* "평가" 질문이 그리드 형식이라 행별 entry에 열 값("1 열")을 보냄 */
+      ratingGood: 'entry.1833168559',  // 평가 [좋아요] 행
+      ratingBad: 'entry.1396795166',   // 평가 [아쉬워요] 행
+      ratingValue: '1 열',
+      page: 'entry.7143880',           // 페이지 (단답)
+      comment: 'entry.488380959'       // 의견 (장문)
     }
   };
 
@@ -123,9 +126,10 @@
       return;
     }
     var body = new URLSearchParams();
-    if (FORM.fields.rating) body.append(FORM.fields.rating, rating || '(선택 안 함)');
-    if (FORM.fields.page) body.append(FORM.fields.page, pageName());
-    if (FORM.fields.comment) body.append(FORM.fields.comment, comment);
+    if (rating === '좋아요') body.append(FORM.fields.ratingGood, FORM.fields.ratingValue);
+    if (rating === '아쉬워요') body.append(FORM.fields.ratingBad, FORM.fields.ratingValue);
+    body.append(FORM.fields.page, pageName());
+    if (comment) body.append(FORM.fields.comment, comment);
     /* no-cors: 구글 폼은 응답을 돌려주지 않으므로 전송 후 감사 화면 표시 */
     fetch(FORM.action, {
       method: 'POST',
